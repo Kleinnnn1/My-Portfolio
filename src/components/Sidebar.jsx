@@ -34,24 +34,6 @@ function Sidebar() {
     <div className="flex">
       {/* Sidebar Section */}
       <div className="bg-customDark text-white w-64 flex flex-col justify-between p-6 h-screen fixed">
-        {/* Logo */}
-        <div className="relative text-center mb-8">
-          <div className="absolute top-0 left-0 flex flex-col items-start">
-            <div className="bg-customOrange h-1 w-5"></div>
-            <div className="bg-customOrange h-5 w-1"></div>
-          </div>
-
-          <div className="text-4xl font-bold">
-            <span className="font-serif text-white">K</span>
-            <span className="font-sans text-gray-100">enn</span>
-          </div>
-
-          <div className="absolute top-4 right-0 flex flex-col items-end">
-            <div className="bg-customOrange h-5 w-1"></div>
-            <div className="bg-customOrange h-1 w-5"></div>
-          </div>
-        </div>
-
         {/* Menu */}
         <ul className="space-y-4 flex flex-col justify-center items-center flex-1">
           {menuItems.map((item) => (
@@ -60,7 +42,7 @@ function Sidebar() {
                 onClick={() => handleNavigation(item.path)} // Trigger navigation with animation
                 className={`flex items-center px-4 py-2 rounded-lg w-full text-lg cursor-pointer transition-all duration-300 ${
                   location.pathname === item.path
-                    ? "text-customOrange bg-gray-800 shadow-md"
+                    ? "text-customOrange" // Removed shadow-md
                     : "hover:bg-gray-700"
                 }`}
               >
