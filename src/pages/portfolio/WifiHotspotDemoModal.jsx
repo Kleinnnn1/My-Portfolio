@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import Pic1 from "../../assets/images/WIFI HOTSPOT VOUCHER/WIFI PORTAL MOBILE.png";
 
 export default function WifiHotspotDemo({ isOpen, onClose }) {
+  const [isLoading, setIsLoading] = useState(true); // State to manage loading
+
   if (!isOpen) return null;
 
   return (
@@ -28,12 +30,23 @@ export default function WifiHotspotDemo({ isOpen, onClose }) {
             The Wifi allows users to access the internet using codes, each valid
             for one hour. Below is a screenshot of the wifi portal.
           </p>
+
+          {/* Loading Spinner */}
+          {isLoading && (
+            <div className="flex justify-center items-center mb-4">
+              <div className="w-8 h-8 border-4 border-customOrange border-t-transparent rounded-full animate-spin"></div>
+            </div>
+          )}
+
           {/* Center the Image */}
           <div className="flex justify-center items-center">
             <img
               src={Pic1}
               alt="Wifi Hotspot Manager Screenshot 1"
-              className="w-auto max-w-full h-auto rounded-lg shadow-md"
+              className={`w-auto max-w-full h-auto rounded-lg shadow-md ${
+                isLoading ? "hidden" : "block"
+              }`}
+              onLoad={() => setIsLoading(false)} // Hide spinner when the image loads
             />
           </div>
         </div>

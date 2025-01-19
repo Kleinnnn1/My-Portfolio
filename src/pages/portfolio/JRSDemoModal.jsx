@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import JRSDEMO from "../../assets/images/JRS SYSTEM/jrs demo.gif"; // Import the GIF
 
 export default function JRSDemo({ isOpen, onClose }) {
+  const [isLoading, setIsLoading] = useState(true); // State to handle loading
+
   if (!isOpen) return null;
 
   return (
@@ -30,11 +32,22 @@ export default function JRSDemo({ isOpen, onClose }) {
             This demo provides a clear overview of how the system works and its
             key features.
           </p>
+
+          {/* Loading Spinner */}
+          {isLoading && (
+            <div className="flex justify-center items-center mb-4">
+              <div className="w-8 h-8 border-4 border-customOrange border-t-transparent rounded-full animate-spin"></div>
+            </div>
+          )}
+
           {/* Display the GIF */}
           <img
             src={JRSDEMO}
             alt="Job Request System Demo"
-            className="w-full rounded-lg shadow-md"
+            className={`w-full rounded-lg shadow-md ${
+              isLoading ? "hidden" : "block"
+            }`}
+            onLoad={() => setIsLoading(false)} // Hide spinner when GIF is loaded
           />
         </div>
       </div>
