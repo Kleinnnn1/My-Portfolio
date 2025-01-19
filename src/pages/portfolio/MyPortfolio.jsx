@@ -16,7 +16,7 @@ export default function Portfolio() {
     },
     {
       gif: OMADAICON,
-      title: "Wifi Hotspot Voucher",
+      title: "Public Guest Gym Wifi",
       onClick: () => setIsWifiModalOpen(true), // Open Wifi modal
     },
   ];
