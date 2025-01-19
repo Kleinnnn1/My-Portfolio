@@ -18,16 +18,15 @@ export default function WifiHotspotDemo({ isOpen, onClose }) {
         {/* Modal Header */}
         <div className="flex justify-between items-center border-b p-4">
           <h2 className="text-xl font-bold text-customBlack">
-            Job Request System
+            Public Guest Gym Wifi
           </h2>
         </div>
 
         {/* Modal Content */}
         <div className="p-3">
           <p className="mb-2 text-sm text-gray-700 text-center">
-            The Wifi Hotspot Manager allows users to access the internet using
-            codes, each valid for one hour. Below is a screenshot of the wifi
-            portal.
+            The Wifi allows users to access the internet using codes, each valid
+            for one hour. Below is a screenshot of the wifi portal.
           </p>
           {/* Center the Image */}
           <div className="flex justify-center items-center">
