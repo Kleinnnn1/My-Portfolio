@@ -104,7 +104,8 @@ export default function AboutMe() {
             </div>
             <div className="border-b border-gray-700 pb-1">
               <p>
-                <strong>Email:</strong> kennbalino@gmail.com
+                <strong>Email:</strong>{" "}
+                <span className="text-base"> kennbalino@gmail.com</span>
               </p>
             </div>
             <div className="border-b border-gray-700 pb-1">
@@ -215,10 +216,6 @@ export default function AboutMe() {
               },
             ].map((education, index, array) => (
               <div key={index} className="relative pl-8 mb-10">
-                {/* Connector Line */}
-                {index !== array.length - 1 && (
-                  <div className="absolute left-2.5 top-4 w-1 h-80 bg-customOrange"></div>
-                )}
                 {/* Dot */}
                 <span className="absolute left-0 top-0 w-6 h-6 bg-customOrange rounded-full"></span>
                 {/* Content */}
@@ -262,10 +259,6 @@ export default function AboutMe() {
               },
             ].map((education, index, array) => (
               <div key={index} className="relative pl-8 mb-10">
-                {/* Connector Line */}
-                {index !== array.length - 1 && (
-                  <div className="absolute left-2.5 top-4 w-1 h-80 bg-customOrange"></div>
-                )}
                 {/* Dot */}
                 <span className="absolute left-0 top-0 w-6 h-6 bg-customOrange rounded-full"></span>
                 {/* Content */}

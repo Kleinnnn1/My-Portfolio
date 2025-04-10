@@ -68,24 +68,12 @@ export default function Home() {
 
       {/* Image Section */}
       <div className="mt-10 md:mt-0 md:w-1/2 flex justify-center relative">
-        {/* Left Bracket */}
-        <div className="absolute -top-10 left-0 flex flex-col items-start">
-          <div className="bg-customOrange h-1 w-10"></div>
-          <div className="bg-customOrange h-10 w-1"></div>
-        </div>
-
         {/* Image */}
         <img
           src={Image}
           alt="Kenneth Jhun N. Balino"
           className="rounded-lg shadow-lg w-full max-w-sm"
         />
-
-        {/* Right Bracket */}
-        <div className="absolute top-80 right-0 flex flex-col items-end">
-          <div className="bg-customOrange h-10 w-1"></div>
-          <div className="bg-customOrange h-1 w-10"></div>
-        </div>
       </div>
     </div>
   );
