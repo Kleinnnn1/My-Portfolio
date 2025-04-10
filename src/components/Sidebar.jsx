@@ -4,21 +4,21 @@ import { FaHome, FaUser, FaListUl, FaFolder, FaEnvelope } from "react-icons/fa";
 
 function Sidebar() {
   const location = useLocation();
-  const navigate = useNavigate(); // For programmatic navigation
+  const navigate = useNavigate();
   const [currentPath, setCurrentPath] = useState(location.pathname);
   const [nextPath, setNextPath] = useState(null);
   const [isSliding, setIsSliding] = useState(false);
 
   const handleNavigation = (path) => {
     if (path !== currentPath) {
-      setNextPath(path); // Set the next page
-      setIsSliding(true); // Trigger sliding animation
+      setNextPath(path);
+      setIsSliding(true);
       setTimeout(() => {
-        setCurrentPath(path); // Update the current page
-        setNextPath(null); // Clear the next page
-        setIsSliding(false); // Reset sliding state
-        navigate(path); // Perform navigation
-      }, 500); // Match the animation duration
+        setCurrentPath(path);
+        setNextPath(null);
+        setIsSliding(false);
+        navigate(path);
+      }, 500);
     }
   };
 
@@ -32,35 +32,35 @@ function Sidebar() {
 
   return (
     <div className="flex">
-      {/* Sidebar Section */}
-      <div className="bg-customDark text-white w-64 flex flex-col justify-between p-6 h-screen fixed">
+      {/* Sidebar */}
+      <div className="bg-customDark text-white w-20 md:w-64 flex flex-col justify-between p-4 md:p-6 h-screen fixed transition-all duration-300">
         {/* Menu */}
-        <ul className="space-y-4 flex flex-col justify-center items-center flex-1">
+        <ul className="space-y-4 flex flex-col justify-center items-center md:items-start flex-1">
           {menuItems.map((item) => (
             <li key={item.name} className="w-full">
               <button
-                onClick={() => handleNavigation(item.path)} // Trigger navigation with animation
-                className={`flex items-center px-4 py-2 rounded-lg w-full text-lg cursor-pointer transition-all duration-300 ${
+                onClick={() => handleNavigation(item.path)}
+                className={`flex items-center px-2 py-2 rounded-lg w-full text-lg cursor-pointer transition-all duration-300 ${
                   location.pathname === item.path
-                    ? "text-customOrange" // Removed shadow-md
+                    ? "text-customOrange"
                     : "hover:bg-gray-700"
                 }`}
               >
-                <span className="mr-3 text-xl">{item.icon}</span>
-                {item.name}
+                <span className="text-xl">{item.icon}</span>
+                <span className="ml-3 hidden md:inline">{item.name}</span>
               </button>
             </li>
           ))}
         </ul>
       </div>
 
-      {/* Main Content Section with Slide Animation */}
-      <div className="flex-1 bg-customBlack ml-64 overflow-hidden relative h-screen">
+      {/* Main Content */}
+      <div className="flex-1 bg-customBlack ml-20 md:ml-64 overflow-hidden relative h-screen">
         {/* Current Page */}
         <div
           className={`absolute inset-0 transform transition-transform duration-500 ${
             isSliding ? "translate-x-full" : "translate-x-0"
-          } overflow-y-auto h-full`} // Enables scrolling
+          } overflow-y-auto h-full`}
         >
           <Outlet key={currentPath} />
         </div>
@@ -70,7 +70,7 @@ function Sidebar() {
           <div
             className={`absolute inset-0 transform transition-transform duration-500 ${
               isSliding ? "translate-x-0" : "-translate-x-full"
-            } overflow-y-auto h-full`} // Enables scrolling for the next page
+            } overflow-y-auto h-full`}
           >
             <Outlet key={nextPath} />
           </div>
@@ -81,6 +81,7 @@ function Sidebar() {
 }
 
 export default Sidebar;
+
 
 // import React from "react";
 // import { NavLink, Outlet } from "react-router-dom";
