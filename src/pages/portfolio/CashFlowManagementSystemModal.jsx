@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import CashFlowImage from "../../assets/images/CASH FLOW MANAGEMENT SYSTEM/home cashflow management system.jfif";
+import CashFlowImage from "../../assets/images/CASH FLOW MANAGEMENT SYSTEM/categories dashboard.jfif";
 
 export default function CashFlowModal({ isOpen, onClose }) {
   const [isLoading, setIsLoading] = useState(true);
