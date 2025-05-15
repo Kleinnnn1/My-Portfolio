@@ -3,10 +3,18 @@ import JRSDemo from "./JRSDemoModal"; // JRS Modal
 import WifiHotspotDemo from "./WifiHotspotDemoModal"; // Wifi Hotspot Modal
 import JRSICON from "../../assets/images/JRS SYSTEM/JRS ICON.gif";
 import OMADAICON from "../../assets/images/WIFI HOTSPOT VOUCHER/WIFI COVER.jpg";
+import HappyMeterModal from "./HappyMeterModal";
+import HappyMeterForm from "../../assets/images/HAPPY METER/happy meter bg.jfif"
+import CashFlowImage from "../../assets/images/CASH FLOW MANAGEMENT SYSTEM/home cashflow management system.jfif";
+import CashFlowModal from "./CashFlowManagementSystemModal";
 
 export default function Portfolio() {
   const [isJRSModalOpen, setIsJRSModalOpen] = useState(false); // State for JRS modal
   const [isWifiModalOpen, setIsWifiModalOpen] = useState(false); // State for Wifi modal
+  const [isHappyModalOpen, setIsHappyModalOpen] = useState(false); // State for Happy Meter modal
+  const [isCashFlowModalOpen, setIsCashFlowModalOpen] = useState(false); // State for Cashflow modal
+
+
 
   const projects = [
     {
@@ -18,6 +26,16 @@ export default function Portfolio() {
       gif: OMADAICON,
       title: "Public Guest Gym Wifi",
       onClick: () => setIsWifiModalOpen(true), // Open Wifi modal
+    },
+    {
+      gif: HappyMeterForm,
+      title: "Happy Meter Feedback Form",
+      onClick: () => setIsHappyModalOpen(true), // Open Happy Meter modal
+    },
+    {
+      gif: CashFlowImage,
+      title: "Cash Flow Management System",
+      onClick: () => setIsCashFlowModalOpen(true), // Open Cashflow Meter modal
     },
   ];
 
@@ -59,6 +77,16 @@ export default function Portfolio() {
       <WifiHotspotDemo
         isOpen={isWifiModalOpen}
         onClose={() => setIsWifiModalOpen(false)}
+      />
+
+      <HappyMeterModal
+        isOpen={isHappyModalOpen}
+        onClose={() => setIsHappyModalOpen(false)}
+      />
+
+      <CashFlowModal
+        isOpen={isCashFlowModalOpen}
+        onClose={() => setIsCashFlowModalOpen(false)}
       />
     </div>
   );
