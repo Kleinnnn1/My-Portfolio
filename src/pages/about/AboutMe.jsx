@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { FaReact, FaDatabase, FaJs, FaCss3Alt } from "react-icons/fa";
-import { SiSupabase, SiTailwindcss, SiMysql, SiDjango, SiPhp, SiReactquery, SiBootstrap } from "react-icons/si";
+import { SiSupabase, SiTailwindcss, SiMysql, SiDjango, SiPhp, SiReactquery, SiBootstrap, SiWordpress } from "react-icons/si";
 
 export default function AboutMe() {
   const [skillProgress, setSkillProgress] = useState([]);
@@ -51,6 +51,11 @@ export default function AboutMe() {
         name: "React Query",
         percentage: 70,
         icon: <SiReactquery className="text-pink-500" />,
+      },
+      {
+        name: "WordPress",
+        percentage: 70,
+        icon: <SiWordpress className="text-blue-800" />,
       },
       {
         name: "CSS",
@@ -196,6 +201,11 @@ export default function AboutMe() {
                 name: "React Query",
                 percentage: 80,
                 icon: <SiReactquery className="text-pink-500" />,
+              },
+              {
+                name: "WordPress",
+                percentage: 70,
+                icon: <SiWordpress className="text-blue-800" />,
               },
               {
                 name: "CSS",
