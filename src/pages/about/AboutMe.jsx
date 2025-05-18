@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { FaReact, FaDatabase, FaJs } from "react-icons/fa";
-import { SiSupabase, SiMysql, SiDjango, SiTailwindcss } from "react-icons/si";
+import { FaReact, FaDatabase, FaJs, FaCss3Alt } from "react-icons/fa";
+import { SiSupabase, SiTailwindcss, SiMysql, SiDjango, SiPhp, SiReactquery, SiBootstrap } from "react-icons/si";
 
 export default function AboutMe() {
   const [skillProgress, setSkillProgress] = useState([]);
@@ -9,39 +9,58 @@ export default function AboutMe() {
     const skills = [
       {
         name: "React.js",
-        percentage: 75,
+        percentage: 80,
         icon: <FaReact className="text-blue-500" />,
       },
       {
         name: "Supabase",
-        percentage: 70,
+        percentage: 80,
         icon: <SiSupabase className="text-green-500" />,
       },
       {
         name: "Tailwind CSS",
-        percentage: 65,
+        percentage: 80,
         icon: <SiTailwindcss className="text-blue-400" />,
       },
       {
         name: "PostgreSQL",
-        percentage: 60,
+        percentage: 80,
         icon: <FaDatabase className="text-indigo-600" />,
       },
-
       {
         name: "MySQL",
-        percentage: 50,
+        percentage: 80,
         icon: <SiMysql className="text-blue-700" />,
       },
       {
         name: "JavaScript",
-        percentage: 40,
+        percentage: 75,
         icon: <FaJs className="text-yellow-400" />,
       },
       {
         name: "Django",
-        percentage: 15,
+        percentage: 70,
         icon: <SiDjango className="text-green-700" />,
+      },
+      {
+        name: "PHP",
+        percentage: 70,
+        icon: <SiPhp className="text-indigo-500" />,
+      },
+      {
+        name: "React Query",
+        percentage: 70,
+        icon: <SiReactquery className="text-pink-500" />,
+      },
+      {
+        name: "CSS",
+        percentage: 65,
+        icon: <FaCss3Alt className="text-blue-500" />,
+      },
+      {
+        name: "Bootstrap",
+        percentage: 65,
+        icon: <SiBootstrap className="text-purple-600" />,
       },
     ];
 
@@ -135,39 +154,58 @@ export default function AboutMe() {
             {[
               {
                 name: "React.js",
-                percentage: 75,
+                percentage: 80,
                 icon: <FaReact className="text-blue-500" />,
               },
               {
                 name: "Supabase",
-                percentage: 70,
+                percentage: 80,
                 icon: <SiSupabase className="text-green-500" />,
               },
               {
                 name: "Tailwind CSS",
-                percentage: 65,
+                percentage: 80,
                 icon: <SiTailwindcss className="text-blue-300" />,
               },
               {
                 name: "PostgreSQL",
-                percentage: 60,
+                percentage: 80,
                 icon: <FaDatabase className="text-indigo-600" />,
               },
-
               {
                 name: "MySQL",
-                percentage: 50,
+                percentage: 80,
                 icon: <SiMysql className="text-blue-700" />,
               },
               {
                 name: "JavaScript",
-                percentage: 40,
+                percentage: 80,
                 icon: <FaJs className="text-yellow-400" />,
               },
               {
                 name: "Django",
-                percentage: 15,
+                percentage: 80,
                 icon: <SiDjango className="text-green-700" />,
+              },
+              {
+                name: "PHP",
+                percentage: 80,
+                icon: <SiPhp className="text-indigo-500" />,
+              },
+              {
+                name: "React Query",
+                percentage: 80,
+                icon: <SiReactquery className="text-pink-500" />,
+              },
+              {
+                name: "CSS",
+                percentage: 65,
+                icon: <FaCss3Alt className="text-blue-500" />,
+              },
+              {
+                name: "Bootstrap",
+                percentage: 65,
+                icon: <SiBootstrap className="text-purple-600" />,
               },
             ].map((skill, index) => (
               <div key={index}>
